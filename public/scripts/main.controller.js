@@ -1,2 +1,7 @@
 angular.module('myApp')
-    .controller('MainController', MainController);
+    .controller('mainController', mainController);
+
+function mainController() {
+console.log("in main controller");
+
+}
