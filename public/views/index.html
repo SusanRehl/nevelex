@@ -15,21 +15,22 @@
     <script src="scripts/main.service.js"></script>
     <link rel="stylesheet" href="vendors/bootstrap.min.css" charset="utf-8">
     <link rel="stylesheet" href="css/stylesheet.css" charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Raleway:600,800' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Paytone+One" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Critters5000</title>
   </head>
 
   <body>
-      <main class="container" ng-controller="mainController as main">
+      <main ng-controller="mainController as main">
 
          <header>
-            <h1>Critters</h1>
+            <h1>Critter5000</h1>
+            <h3>Animal Management System</h3>
+            <button class="ghost-button" ng-click="">ADD</button>
           </header>
 
-          <section>
+          <section class="critters">
               <div class="row">
                   <div class="col-sm-4" ng-repeat="animal in main.animalList">
                             <h2>Name: {{animal.commonName}}</h2>
