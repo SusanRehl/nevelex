@@ -1,0 +1,13 @@
+@-ms-viewport {
+  width: device-width;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Helvetica, sans-serif";
+
+}
+body {
+  font-size: 100%;
+  font-family:  sans-serif;
+}
