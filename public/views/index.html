@@ -27,21 +27,37 @@
          <header>
             <h1>Critter5000</h1>
             <h3>Animal Management System</h3>
-            <button class="ghost-button" ng-click="">ADD</button>
+            <button class="ghost-button-add" ng-click="">ADD</button>
           </header>
 
           <section class="critters">
               <div class="row">
-                  <div class="col-sm-2" ng-repeat="animal in main.animalList">
+                  <div class="col-sm-2" ng-repeat="animal in main.animalList | orderBy: 'commonName'">
                             <!-- <p>Scientific Name: {{animal.scientificName}}</p>
                             <p>Family: {{animal.family}}</p> -->
                             <div class="critterimage">
-                                <img ng-src="{{animal.imageURL}}"/>
+                                <!-- <img ng-src="{{animal.imageURL}}"/> -->
+                                <img class="iconimage" ng-click="main.getThisID(animal.id)" type="button" data-target="#animalDetail" data-toggle="modal" ng-src="{{animal.imageURL}}" />
                             </div>
                             <h2>{{animal.commonName}}</h2>
                   </div>
               </div>
           <section>
+
+<!-- MODAL FOR ANIMAL DETAILS  -->
+
+            <section class="modal" id="animalDetail">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                            <h4 id="animalDetailLabel">{{main.info.commonName}}</h4>
+                            <img class="modalimage" ng-src="{{main.info.imageURL}}"/>
+                            <p>Scientific Name: {{main.info.scientificName}}</p>
+                            <p>Family: {{main.info.family}}</p>
+                            <span><button type="button" class="ghost-button-modal">Delete</button></span>
+                            <span><button type="button" class="ghost-button-modal buttonfloat" data-dismiss="modal">Close</button></span>
+                    </div>
+                </div>
+            </section>  <!-- end modal -->
 
       </main>  <!-- end controller  -->
 

@@ -29,7 +29,8 @@ header {
   border: 2px solid #9AC752;
   position: relative;
 }
-img {
+
+.iconimage {
   width: 150px;
   height: auto;
   background-color: #FFF;
@@ -47,7 +48,7 @@ h1 {
 h2 {
   font-family: 'Paytone One', sans-serif;
   font-size: 2em;
-  color: #FFFFFF;
+  color: #9AC752;
   margin-top: 1%;
 }
 
@@ -56,7 +57,16 @@ h3 {
   margin-top: -1%;
 }
 
-.ghost-button  {
+h4 {
+  font-family: 'Paytone One', sans-serif;
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+.ghost-button-add  {
    color: #9AC752;
    border: 2px solid #9AC752;
    background-color: transparent;
@@ -68,14 +78,53 @@ h3 {
    float: right;
  }
 
- .ghost-button:active, .ghost-button:hover {
+ .ghost-button-add:active, .ghost-button-add:hover {
    color: #FFF;
    border: none;
    background-color: #9AC752;
    border: 1px solid #000;
-   float: right;
  }
 
  .critters {
    padding: 1% 5% 1% 5%;
  }
+
+.modal-content {
+  background-color: #E9F3D8;
+  padding: 0 5% 5% 5%;
+  width: 364px;
+  min-height: 400px;;
+}
+
+ .modalimage {
+   width: 300px;
+   height: auto;
+   background-color: #FFF;
+   text-align: center;
+   border: 2px solid #9AC752;
+   display: block;
+   margin-bottom: 7%;
+ }
+
+ .ghost-button-modal  {
+    color: #9AC752;
+    border: 2px solid #9AC752;
+    background-color: transparent;
+    font-family: 'Paytone One', sans-serif;
+    font-size: 2em;
+    margin-top: -4%;
+    min-width: 120px;
+    align: center;
+    margin-top: 7%;
+  }
+
+  .ghost-button-modal:active, .ghost-button-modal:hover {
+    color: #FFF;
+    border: none;
+    background-color: #9AC752;
+    margin-top: 7%;
+  }
+
+  .buttonfloat {
+    float: right;
+  }
