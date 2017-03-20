@@ -12,6 +12,7 @@
     <script src="vendors/bootstrap.min.js"></script>
     <script src="scripts/app.module.js"></script>
     <script src="scripts/main.controller.js"></script>
+    <script src="scripts/main.service.js"></script>
     <link rel="stylesheet" href="vendors/bootstrap.min.css" charset="utf-8">
     <link rel="stylesheet" href="css/stylesheet.css" charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=Raleway:600,800' rel='stylesheet' type='text/css'>
@@ -22,18 +23,23 @@
   </head>
 
   <body>
-      <main class="container" ng-controller="mainController">
+      <main class="container" ng-controller="mainController as main">
 
-        <p> Hello World </p>
+         <header>
+            <h1>Critters</h1>
+          </header>
 
+          <section>
+              <div class="row">
+                  <div class="col-sm-4" ng-repeat="animal in main.animalList">
+                            <h2>Name: {{animal.commonName}}</h2>
+                            <p>Scientific Name: {{animal.scientificName}}</p>
+                            <p>Family: {{animal.family}}</p>
+                            <img ng-src="{{animal.imageURL}}"/>
 
-
-
-
-
-
-
-
+                  </div>
+              </div>
+          <section>
 
       </main>  <!-- end controller  -->
 

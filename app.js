@@ -3,6 +3,8 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 
+app.use(bodyParser.json());
+
 app.use(express.static('public'));
 
 app.get('/*', function(req, res) {
