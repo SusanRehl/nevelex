@@ -32,12 +32,13 @@
 
           <section class="critters">
               <div class="row">
-                  <div class="col-sm-4" ng-repeat="animal in main.animalList">
-                            <h2>Name: {{animal.commonName}}</h2>
-                            <p>Scientific Name: {{animal.scientificName}}</p>
-                            <p>Family: {{animal.family}}</p>
-                            <img ng-src="{{animal.imageURL}}"/>
-
+                  <div class="col-sm-2" ng-repeat="animal in main.animalList">
+                            <!-- <p>Scientific Name: {{animal.scientificName}}</p>
+                            <p>Family: {{animal.family}}</p> -->
+                            <div class="critterimage">
+                                <img ng-src="{{animal.imageURL}}"/>
+                            </div>
+                            <h2>{{animal.commonName}}</h2>
                   </div>
               </div>
           <section>
