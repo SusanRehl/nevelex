@@ -27,8 +27,25 @@
          <header>
                  <h1>Critter5000</h1>
                  <h3>Animal Management System</h3>
-                <button class="ghost-button-add" ng-click="">ADD</button>
-          </header>
+                <button class="ghost-button-add" data-target="#animalAdd" data-toggle="modal">ADD</button>
+        </header>
+
+        <section class="modal" id="animalAdd">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                  <form ng-submit="main.createAnimal(main.commonName, main.scientificName, main.family, main.imageUrl)">
+                      <h2>Add New Animal</h2>
+                      <label>Name</label><input type="text" ng-model="main.commonName" required />
+                      <label>Scientific Name</label><input type="text" ng-model="main.scientificName" />
+                      <label>Family</label><input type="text" ng-model="main.family" />
+                      <label>Image URL</label><input type="url" ng-model="main.imageUrl" />
+                      <span><button class="ghost-button-modal" type="submit">Add</button></span>
+                      <span><button type="button" class="ghost-button-modal buttonfloat" data-dismiss="modal">Close</button></span>
+                  </form>
+                </div>
+            </div>
+      </section>
+
 
           <section class="critters">
               <div class="row">
@@ -56,16 +73,7 @@
                 </div>
             </section>  <!-- end modal -->
 
-            <div>
-                <form ng-submit="main.createAnimal(main.commonName, main.scientificName, main.family, main.imageUrl)">
-                    <h2>Add New Animal</h2>
-                        <label>Name</label><input type="text" ng-model="main.commonName" required />
-                        <label>Scientific Name</label><input type="text" ng-model="main.scientificName" />
-                        <label>Family</label><input type="text" ng-model="main.family" />
-                        <label>Image URL</label><input type="url" ng-model="main.imageUrl" />
-                        <button class="ghost-button-modal buttonfloat" type="submit">Add</button>
-                </form>
-            </div>
+
 
       </main>  <!-- end controller  -->
 
