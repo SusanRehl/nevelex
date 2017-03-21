@@ -8,7 +8,7 @@ console.log("in main controller");
       main.animalID = [];
       animal.data = {};
       main.newAnimal = [];
-      main.info = [];
+      main.details = [];
 
 //GETS ANIMAL LIST
 
@@ -29,15 +29,15 @@ console.log("in main controller");
 
     main.getAnimalDetail = function(id){
       return animal.getDetail(id)
-      .then(function(animalInfo){
-           main.info = animalInfo;
-           console.log("animal details: ", main.info);
+      .then(function(animalDetails){
+           main.details = animalDetails;
+           console.log("animal details: ", main.details);
        }, function(error){
            console.log("error getting this animal's details", error);
        });
     };
 
-    main.getThisID = function(thisId){
+    main.getAnimalID = function(thisId){
         main.getAnimalDetail(thisId);
     };
 
@@ -58,6 +58,19 @@ console.log("in main controller");
           });
       };
 
+      var idToDelete = "";
 
+      main.getDeleteID = function(deleteId){
+        idToDelete = deleteId;
+      };
+
+      main.deleteAnimal = function(){
+        return animal.deleteThisAnimal(idToDelete)
+          .then(function(animalDelete){
+            main.getAllAnimals();
+          }, function(error){
+            console.log('error deleting animal', error);
+            });
+       };
 
   } // end mainController function

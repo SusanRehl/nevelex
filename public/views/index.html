@@ -30,6 +30,8 @@
                 <button class="ghost-button-add" data-target="#animalAdd" data-toggle="modal">ADD</button>
         </header>
 
+        <!-- MODAL TO ADD ANIMAL -->
+
         <section class="modal" id="animalAdd">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -56,34 +58,72 @@
                   </form>
                 </div>
             </div>
-      </section>
+         </section>   <!-- end Add Animal modal -->
 
+         <!--  LIST ANIMALS  -->
 
           <section class="critters">
               <div class="row">
                   <div class="col-sm-2" ng-repeat="animal in main.animalList | orderBy: 'commonName'">
                             <div class="critterimage">
-                                <img class="iconimage" ng-click="main.getThisID(animal.id)" type="button" data-target="#animalDetail" data-toggle="modal" ng-src="{{animal.imageURL}}" />
+                            <img class="iconimage" ng-click="main.getAnimalID(animal.id)" type="button" data-target="#animalDetail" data-toggle="modal" ng-src="{{animal.imageURL}}" />
                             </div>
                             <h2>{{animal.commonName}}</h2>
+                            <button class="ghost-button-delete" ng-click="main.getDeleteID(animal.id)" type="button" data-target="#animalDelete" data-toggle="modal">Delete</button>
                   </div>
               </div>
-          <section>
+          <section>  <!-- end animal list  -->
 
-<!-- MODAL FOR ANIMAL DETAILS  -->
+          <!-- MODAL FOR ANIMAL DETAILS  -->
 
             <section class="modal" id="animalDetail">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                            <h4 id="animalDetailLabel">{{main.info.commonName}}</h4>
-                            <img class="modalimage" ng-src="{{main.info.imageURL}}"/>
-                            <p>Scientific Name: {{main.info.scientificName}}</p>
-                            <p>Family: {{main.info.family}}</p>
-                            <span><button type="button" class="ghost-button-modal" ng-click="">Delete</button></span>
+                            <h4 id="animalDetailLabel">{{main.details.commonName}}</h4>
+                            <img class="modalimage" ng-src="{{main.details.imageURL}}"/>
+                            <p>Scientific Name: {{main.details.scientificName}}</p>
+                            <p>Family: {{main.details.family}}</p>
+                            <span><button type="button" class="ghost-button-modal"  data-dismiss="modal" ng-click="main.deleteAnimal(main.details.id)">Delete</button></span>  <!-- id="animalDelete" -->
                             <span><button type="button" class="ghost-button-modal buttonfloat" data-dismiss="modal">Close</button></span>
                     </div>
                 </div>
             </section>  <!-- end modal -->
+
+
+            <!--  MODAL TO CONFIRM DELETE OF ANIMAL -->
+
+            <div class="modal fade" id="animalDelete" tabindex="-1" role="dialog" aria-labelledby="deleteLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                  <div class="modal-body">
+                    <p>Are you sure you want to delete this animal?</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="main.deleteAnimal()" >Yes</button>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+            <!-- <div class="modal fade" id="animalDelete" tabindex="-1" role="dialog" aria-labelledby="deleteLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                    <p>Confirm delete:</p>
+                    <button type="button" class="ghost-button-modal" data-dismiss="modal">No</button>
+                    <button type="button" class="ghost-button-modal buttonfloat" data-dismiss="modal" ng-click="main.deleteAnimal()">Yes</button>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- end modal -->
 
 
 
