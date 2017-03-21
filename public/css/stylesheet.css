@@ -10,7 +10,7 @@ html {
 body {
   font-size: 100%;
   font-family: 'Open Sans', sans-serif;
-   background-color: #808080;
+  background-color: #808080;
 }
 
 header {
@@ -89,6 +89,7 @@ p {
    min-width: 120px;
    align: center;
    float: right;
+     outline: none;
  }
 
  .ghost-button-add:active, .ghost-button-add:hover {
@@ -96,6 +97,7 @@ p {
    border: none;
    background-color: #9AC752;
    border: 1px solid #000;
+     outline: none;
  }
 
  .critters {
@@ -106,7 +108,9 @@ p {
   background-color: #E9F3D8;
   padding: 0 5% 5% 5%;
   width: 364px;
-  min-height: 400px;;
+  min-height: 400px;
+  top: 10%;
+  left: 20%;
 }
 
  .modalimage {
@@ -119,6 +123,14 @@ p {
    margin-bottom: 7%;
  }
 
+ .modalhead {
+   padding: 5% 0;
+ }
+
+ input:focus {
+    outline: none;
+}
+
  .ghost-button-modal  {
     color: #9AC752;
     border: 2px solid #9AC752;
@@ -129,6 +141,7 @@ p {
     min-width: 120px;
     align: center;
     margin-top: 7%;
+      outline: none;
   }
 
   .ghost-button-modal:active, .ghost-button-modal:hover {
@@ -136,6 +149,7 @@ p {
     border: none;
     background-color: #9AC752;
     margin-top: 7%;
+      outline: none;
   }
 
   .buttonfloat {
