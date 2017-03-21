@@ -1,5 +1,4 @@
-angular.module('myApp')
-    .controller('mainController', mainController);
+angular.module('myApp').controller('mainController', mainController);
 
 function mainController(animal) {
 console.log("in main controller");

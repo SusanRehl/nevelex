@@ -25,18 +25,15 @@
       <main ng-controller="mainController as main">
 
          <header>
-            <h1>Critter5000</h1>
-            <h3>Animal Management System</h3>
-            <button class="ghost-button-add" ng-click="">ADD</button>
+                 <h1>Critter5000</h1>
+                 <h3>Animal Management System</h3>
+                <button class="ghost-button-add" ng-click="">ADD</button>
           </header>
 
           <section class="critters">
               <div class="row">
                   <div class="col-sm-2" ng-repeat="animal in main.animalList | orderBy: 'commonName'">
-                            <!-- <p>Scientific Name: {{animal.scientificName}}</p>
-                            <p>Family: {{animal.family}}</p> -->
                             <div class="critterimage">
-                                <!-- <img ng-src="{{animal.imageURL}}"/> -->
                                 <img class="iconimage" ng-click="main.getThisID(animal.id)" type="button" data-target="#animalDetail" data-toggle="modal" ng-src="{{animal.imageURL}}" />
                             </div>
                             <h2>{{animal.commonName}}</h2>
