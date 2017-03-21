@@ -8,6 +8,7 @@ console.log("in main controller");
       main.animalID = [];
       animal.data = {};
       main.newAnimal = [];
+      main.info = [];
 
 //GETS ANIMAL LIST
 
@@ -26,18 +27,37 @@ console.log("in main controller");
 
 //GETS ID OF ANIMAL CLICKED ON AND GETS DETAILS FOR THAT ANIMAL
 
-    main.getThisID = function(thisId){
-      main.getAnimalDetail(thisId);
-    };
-
     main.getAnimalDetail = function(id){
       return animal.getDetail(id)
       .then(function(animalInfo){
-      main.info = animalInfo;
-    }, function(error){
-      console.log("error getting this animal's details", error);
-    });
-  };
-  console.log("animal details: ", main);
+           main.info = animalInfo;
+           console.log("animal details: ", main.info);
+       }, function(error){
+           console.log("error getting this animal's details", error);
+       });
+    };
+
+    main.getThisID = function(thisId){
+        main.getAnimalDetail(thisId);
+    };
+
+      main.createAnimal = function(name, scientificName, family, imageUrl){
+        return animal.createNewAnimal(name, scientificName, family, imageUrl)
+          .then(function(response){
+            main.animalList = [];
+            main.getAllAnimals();
+
+            //clear form
+            main.commonName = '';
+            main.scientificName = '';
+            main.family = '';
+            main.imageUrl = '';
+
+          }, function(error){
+            console.log('error creating animal', error);
+          });
+      };
+
+
 
   } // end mainController function

@@ -38,7 +38,28 @@ function animalService($http, $httpParamSerializerJQLike){
       });
     };
 
+//ADDING A NEW ANIMAL TO API
 
+
+this.createNewAnimal = function(name, scientificName, family, imageUrl){
+  var animalDetail = {
+          commonName: name,
+          scientificName: scientificName,
+          family: family,
+          imageUrl: imageUrl};
+          console.log(animalDetail);
+
+  var req = {
+    method: 'POST',
+    url: url + '/Create',
+    headers: head,
+    params: params,
+    data: $httpParamSerializerJQLike(animalDetail)
+};
+    return $http(req).then(function(response){
+      return response;
+  });
+};
 
 
 

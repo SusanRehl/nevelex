@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Paytone+One" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Critters5000</title>
+    <title>Critter5000</title>
   </head>
 
   <body>
@@ -50,11 +50,22 @@
                             <img class="modalimage" ng-src="{{main.info.imageURL}}"/>
                             <p>Scientific Name: {{main.info.scientificName}}</p>
                             <p>Family: {{main.info.family}}</p>
-                            <span><button type="button" class="ghost-button-modal">Delete</button></span>
+                            <span><button type="button" class="ghost-button-modal" ng-click="">Delete</button></span>
                             <span><button type="button" class="ghost-button-modal buttonfloat" data-dismiss="modal">Close</button></span>
                     </div>
                 </div>
             </section>  <!-- end modal -->
+
+            <div>
+                <form ng-submit="main.createAnimal(main.commonName, main.scientificName, main.family, main.imageUrl)">
+                    <h2>Add New Animal</h2>
+                        <label>Name</label><input type="text" ng-model="main.commonName" required />
+                        <label>Scientific Name</label><input type="text" ng-model="main.scientificName" />
+                        <label>Family</label><input type="text" ng-model="main.family" />
+                        <label>Image URL</label><input type="url" ng-model="main.imageUrl" />
+                        <button class="ghost-button-modal buttonfloat" type="submit">Add</button>
+                </form>
+            </div>
 
       </main>  <!-- end controller  -->
 
