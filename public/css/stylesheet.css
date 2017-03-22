@@ -88,7 +88,7 @@ p {
    min-width: 120px;
    align: center;
    float: right;
-     outline: none;
+   outline: none;
  }
 
  .ghost-button-add:active, .ghost-button-add:hover {
@@ -96,7 +96,7 @@ p {
    border: none;
    background-color: #9AC752;
    border: 1px solid #000;
-     outline: none;
+   outline: none;
  }
 
  .critters {
@@ -189,7 +189,7 @@ p {
      color: #FFF;
      border: 1px solid #666666;
      background-color: red;
-      margin: 3% 0 15% 0;
+     margin: 3% 0 15% 0;
      outline: none;
    }
 

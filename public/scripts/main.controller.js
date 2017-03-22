@@ -47,7 +47,6 @@ console.log("in main controller");
             main.animalList = [];
             main.getAllAnimals();
 
-            //clear form
             main.commonName = '';
             main.scientificName = '';
             main.family = '';

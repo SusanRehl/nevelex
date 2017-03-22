@@ -60,6 +60,8 @@ function animalService($http, $httpParamSerializerJQLike){
         });
       }; // end create animal function
 
+// DELETING ANIMAL FROM API
+
       this.deleteThisAnimal = function(id){
         var req = {
           method: 'POST',
