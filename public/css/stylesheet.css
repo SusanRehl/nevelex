@@ -108,9 +108,22 @@ p {
   background-color: #E9F3D8;
   padding: 0 5% 5% 5%;
   width: 364px;
-  min-height: 400px;
+  max-width: 100%;
   top: 10%;
   left: 20%;
+}
+
+.detailmodal {
+  min-height: 375px;
+}
+
+.addmodal {
+  min-height: 400px;
+}
+
+.deletemodal {
+  min-height: 200px;
+  width: 325px;
 }
 
  .modalimage {
@@ -141,15 +154,15 @@ p {
     min-width: 120px;
     align: center;
     margin-top: 7%;
-      outline: none;
+    outline: none;
   }
 
   .ghost-button-modal:active, .ghost-button-modal:hover {
     color: #FFF;
-    border: none;
+    border: 2px solid #9AC752;
     background-color: #9AC752;
     margin-top: 7%;
-      outline: none;
+    outline: none;
   }
 
   .buttonfloat {
@@ -158,7 +171,7 @@ p {
 
   .ghost-button-delete  {
      color: #FFF;
-     border: 2px solid red;
+     border: 1px solid red;
      background-color: transparent;
      font-family: 'Paytone One', sans-serif;
      font-size: 1.2em;
@@ -171,8 +184,19 @@ p {
 
    .ghost-button-delete:active, .ghost-button-delete:hover {
      color: #FFF;
-     border: 2px solid #666666;
+     border: 1px solid #666666;
      background-color: red;
      margin-top: 7%;
      outline: none;
+   }
+
+   .deleteconfirmbutton {
+     color: red;
+     border: 2px solid red;
+   }
+
+   .deleteconfirmbutton:active, .deleteconfirmbutton:hover {
+      color: #FFF;
+      background-color: red;
+      border: 2px solid red;
    }
