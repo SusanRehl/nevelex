@@ -29,6 +29,7 @@ header {
 }
 
 .critterimage {
+  margin: auto;
   height: 154px;
   background-color: #FFF;
   width: 154px;
@@ -180,7 +181,7 @@ p {
      margin-top: -4%;
      min-width: 65px;
      align: center;
-     margin-top: 7%;
+     margin: 3% 0 15% 0;
      outline: none;
    }
 
@@ -188,7 +189,7 @@ p {
      color: #FFF;
      border: 1px solid #666666;
      background-color: red;
-     margin-top: 7%;
+      margin: 3% 0 15% 0;
      outline: none;
    }
 
